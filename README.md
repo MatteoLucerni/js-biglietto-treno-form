@@ -1,10 +1,5 @@
 # Train ticket price calculator (advanced)
 
-- Sostituisco le variabili che erano tamite prompt con quelle nuove tramite input
-- Prendo il bottone dal DOM e lo salvo
-- Faccio in modo che il calcolo si effettui solo quando l'utente clicca sul bottone
-- Il biglietto deve comprarire solo se si clicca il bottone
-
 - Salvo i dati inseriti dall'utente in variabili:
     - prezzo per km
     - nome e congnome dell'utente
