@@ -9,16 +9,16 @@
     <title>Ticket Calculator</title>
 </head>
 <body class="bg-main text-center">
-    <h1>CALCOLA IL PREZZO DEL BIGLIETTO</h1>
-    <div class="card text-center m-5 p-5 rounded-5">
+    <h1 class="mt-2">CALCOLA IL PREZZO DEL BIGLIETTO</h1>
+    <div class="card text-center m-5 p-5 mt-0 rounded-4">
         <div class="card-form d-flex justify-content-center mb-5 gap-5">
             <div>
                 <label class="form-label" for="user">Nome e cognome</label>
-                <input type="text" id="user" class="form-control" value="Matteo Lucerni">
+                <input type="text" id="user" class="form-control" value="Matteo Lucerni" required>
             </div>
             <div>
                 <label class="form-label" for="distance">km da percorrere</label>
-                <input id="distance" class="form-control" type="number" value="35">
+                <input id="distance" class="form-control" type="number" value="35" required>
             </div>
             <div>
                 <label class="form-label" for="age">Fascia d'età</label>
@@ -30,13 +30,15 @@
             </div>
         </div>
         <div class="card-buttons">
-            <button id="calculate" class="btn bg-gray">Calcola!</button>
-            <button id="reset" class="btn bg-gray">Svuota campi</button>
+            <button id="calculate" class="bg-gray">Calcola!</button>
+            <button id="reset" class="ms-3 bg-gray">Svuota campi</button>
         </div>
+        <h2 id="errorPlace"></h2>
     </div>
     <div>
         <h1>IL TUO BIGLIETTO</h1>
-        <div class="card text-center m-5 p-5 rounded-5">
+        <div class="card text-center m-5 mt-0 p-5">
+            <h2 class="text-start">DETTAGLIO PASSEGGERI</h2>
             <div class="card d-flex flex-row">
                 <div class="card-name bg-gray p-5 text-start">
                     <h3>NOME PASSEGGERO</h3>
@@ -80,17 +82,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td id="offerPlace">
-                                    Biglietto Standard
+                                <td id="ticketPlace">
+                                     
                                 </td>
                                 <td id="cabPlace">
-                                    5
+                                    
                                 </td>
                                 <td id="codePlace">
-                                    346346
+                                    
                                 </td>
                                 <td id="pricePlace">
-                                    2.10
+                                    
                                 </td>
                             </tr>
                         </tbody>

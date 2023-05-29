@@ -20,15 +20,20 @@ L'output del prezzo finale va messo fuori con massimo due decimali, per indicare
 - va applicato uno sconto del 20% per i minorenni
 - va applicato uno sconto del 40% per gli over 65. */
 
-const target = document.getElementById('target');
-const errorTarget = document.getElementById('error');
 const pricePerKm = 0.21;
 const button = document.getElementById('calculate');
+const error = document.getElementById('errorPlace');
+const userNamePlace = document.getElementById('namePlace');
+const ticket = document.getElementById('ticketPlace');
+const cab = document.getElementById('cabPlace');
+const code = document.getElementById('codePlace');
+const pricePlace = document.getElementById('pricePlace');
 
 // Creo una callback function sul bottone
 
 button.addEventListener('click', function(){
 
+    const userName = document.getElementById('user').value
     const distance = parseInt(document.getElementById('distance').value);
     const age = document.getElementById('age').value;
 
@@ -49,34 +54,31 @@ button.addEventListener('click', function(){
         // Calcolo lo sconto in base all età
 
         let discount = 0;
-        let discountMessage = 'Nessuno sconto disponibile D:'
 
         if(age === "Minor"){
             discount = 20;
-            discountMessage = `Sei minorenne, lo sconto è del' ${discount}%.`;
         } else if(age === "Over"){
             discount = 40;
-            discountMessage = `Sei over 65, lo sconto è del' ${discount}%.`;
         }
 
         console.log('Sconto: ',discount,'%.');
 
         // Calcolo il prezzo finale scontato
 
-        discountedPrice = (price - ((discount / 100) * price)).toFixed(2);
+        const discountedPrice = (price - ((discount / 100) * price)).toFixed(2);
         console.log('Prezzo scontato: ' + discountedPrice);
 
-        // Inserisco il prezzo scontato in pagina
+        // Inserisco i dati in pagina
 
-        if(discount != 0){
-            target.innerText = `Il tuo biglietto costa: ${discountedPrice}€. ${discountMessage} Prezzo non scontato: ${price}€`;
-        } else{
-            target.innerText = `Il tuo biglietto costa: ${discountedPrice}€. ${discountMessage}`;
-        }
+        userNamePlace.innerText = userName;
+        ticket.innerText = 'Biglietto ' + age;
+        cab.innerText = Math.floor(Math.random() * 10) + 1;
+        code.innerText = Math.floor(Math.random() * 99999) + 1;
+        pricePlace.innerText = discountedPrice + '€';
 
     } else{
         console.log('Errore: Per favore inserisci solo valori numerici validi');
-        target.innerText = 'Errore: Per favore inserisci solo valori numerici  validi';
+        error.innerText = 'Errore: Per favore inserisci solo valori numerici  validi';
     }
 
 })
