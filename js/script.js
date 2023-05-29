@@ -42,8 +42,11 @@ button.addEventListener('click', function(){
     console.log('age: ' + age);
 
     // Validazione elementi inseriti
+
+    const userNameValid = isNaN(userName);
+    console.log(userNameValid);
     
-    if(distance >= 0 && userName){
+    if(distance >= 0 && userName && userNameValid){
 
         console.log('Validazione completata correttamente');
         error.innerText = '';
