@@ -29,6 +29,7 @@ const ticket = document.getElementById('ticketPlace');
 const cab = document.getElementById('cabPlace');
 const code = document.getElementById('codePlace');
 const pricePlace = document.getElementById('pricePlace');
+const ticketBox = document.getElementById('ticket-box');
 
 // Creo una callback function sul bottone
 
@@ -81,9 +82,12 @@ button.addEventListener('click', function(){
         code.innerText = Math.floor(Math.random() * 99999) + 1;
         pricePlace.innerText = discountedPrice + '€';
 
+        ticketBox.className = 'd-block';
+
     } else{
         console.log('Errore: Per favore inserisci solo valori numerici validi');
         error.innerText = 'Errore: Per favore inserisci dati validi';
+        ticketBox.className = 'd-none';
     }
 
 });
