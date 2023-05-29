@@ -98,5 +98,6 @@ resetButton.addEventListener('click', function(){
     document.getElementById('user').value = '';
     document.getElementById('distance').value = '';
     document.getElementById('age').value = 'Standard';
+    ticketBox.className = 'd-none';
 });
 
