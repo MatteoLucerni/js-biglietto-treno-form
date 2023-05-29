@@ -15,6 +15,7 @@
             - Calcolo lo sconto in base alla fascia di età
             - Calcolo il prezzo finale scontato
             - Inserisco i dati in pagina (usando i contenitori targhettati in rpecedenza):
+                - Nome e cognome utente
                 - Tipo di biglietto
                 - Numero cabina (random)
                 - codice (random)
