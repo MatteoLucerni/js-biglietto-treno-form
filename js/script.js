@@ -12,15 +12,16 @@ L'output del prezzo finale va messo fuori con massimo due decimali, per indicare
 
 // ! TRACCIA AGGIORNATA
 /* Scrivere un programma che chieda all’utente:
--Il proprio nome
+- Il proprio nome
 - Il numero di chilometri da percorrere
 - Età del passeggero
-  Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
+Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
 - il prezzo del biglietto è definito in base ai km (0.21 € al km)
 - va applicato uno sconto del 20% per i minorenni
 - va applicato uno sconto del 40% per gli over 65. */
 
 const pricePerKm = 0.21;
+const resetButton = document.getElementById('reset');
 const button = document.getElementById('calculate');
 const error = document.getElementById('errorPlace');
 const userNamePlace = document.getElementById('namePlace');
@@ -42,9 +43,10 @@ button.addEventListener('click', function(){
 
     // Validazione elementi inseriti
     
-    if(distance >= 0){
+    if(distance >= 0 && userName){
 
         console.log('Validazione completata correttamente');
+        error.innerText = '';
 
         // Calcolo prezzo biglietto
 
@@ -55,7 +57,7 @@ button.addEventListener('click', function(){
 
         let discount = 0;
 
-        if(age === "Minor"){
+        if(age === "Minori"){
             discount = 20;
         } else if(age === "Over"){
             discount = 40;
@@ -78,8 +80,16 @@ button.addEventListener('click', function(){
 
     } else{
         console.log('Errore: Per favore inserisci solo valori numerici validi');
-        error.innerText = 'Errore: Per favore inserisci solo valori numerici  validi';
+        error.innerText = 'Errore: Per favore inserisci dati validi';
     }
 
-})
+});
+
+// button reset
+
+resetButton.addEventListener('click', function(){
+    document.getElementById('user').value = '';
+    document.getElementById('distance').value = '';
+    document.getElementById('age').value = 'Standard';
+});
 
