@@ -79,7 +79,7 @@ button.addEventListener('click', function(){
         userNamePlace.innerText = userName;
         ticket.innerText = 'Biglietto ' + age;
         cab.innerText = Math.floor(Math.random() * 10) + 1;
-        code.innerText = Math.floor(Math.random() * 99999) + 1;
+        code.innerText = Math.floor(Math.random() * (10000 - 99999)) + 99999;
         pricePlace.innerText = discountedPrice + '€';
 
         ticketBox.className = 'd-block';
